@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · MoodMove</title>
+
+  <!-- Tipografía desde Google Fonts (una sola familia: Archivo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- HOJA DE ESTILOS EXTERNA (requisito de la tarea) -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ====== ENCABEZADO + LOGO ====== -->
+  <header class="site-header">
+    <!-- Logo hecho solo con texto y CSS (no necesitas un archivo de imagen) -->
+    <a class="logo" href="index.html">
+      <span class="logo-mark">↔</span>
+      <span class="logo-text">Mood<strong>Move</strong></span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="is-active">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ====== HERO ====== -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">About MoodMove</p>
+        <h1>Pick your mood.<br />Then move.</h1>
+        <p class="lead">
+          The training app for people who don't want to do
+          the same workout every single day.
+        </p>
+      </div>
+
+      <!-- Cartas estilo "swipe", hechas 100% con CSS -->
+      <div class="card-stack" aria-hidden="true">
+        <div class="swipe-card card-3">Swim</div>
+        <div class="swipe-card card-2">Run</div>
+        <div class="swipe-card card-1">Lift</div>
+      </div>
+    </section>
+
+    <!-- ====== POR QUÉ LO HICE ====== -->
+    <section class="about">
+      <div class="about-text">
+        <h2>Why I built this</h2>
+        <p>
+          Hi, I'm Susie. I made MoodMove because I love training, but I
+          almost never want to do the same thing two days in a row. Some
+          days I'm ready to lift heavy. Other days I'd rather run on the
+          treadmill, do a Hyrox workout, or swim. Most workout apps hand
+          you one rigid plan, and on the days that plan doesn't match how
+          I feel, I end up skipping the session altogether.
+        </p>
+        <p>
+          MoodMove starts each day with a suggested workout — but if
+          you're not feeling it, you just swipe. Like a dating app for
+          training, you browse other routines and match with the one that
+          fits your energy, your mood, and your goals for that day. For me,
+          having options is exactly what keeps me consistent, and
+          consistency is what actually gets results.
+        </p>
+        <p>
+          The app keeps a calendar of every session you complete, so your
+          progress is easy to look back on, and every user keeps their own
+          notes on each workout — how it felt, the weights they used, what
+          to try next time. The goal is simple: make training feel less
+          like a rule you have to follow and more like a choice you get to
+          make.
+        </p>
+      </div>
+
+      <!-- FOTO OPCIONAL:
+           Por ahora se muestra un recuadro con tus iniciales.
+           Si quieres poner tu foto, borra el <div class="portrait-ph">
+           y descomenta el <img>, poniendo tu imagen en la carpeta images/. -->
+      <figure class="portrait">
+        <div class="portrait-ph">SB</div>
+        <!-- <img src="images/susie.jpg" alt="Susie, creator of MoodMove" /> -->
+        <figcaption>Susie · Creator</figcaption>
+      </figure>
+    </section>
+
+    <!-- ====== VARIEDAD DE RUTINAS ====== -->
+    <section class="modes">
+      <h2>One plan, or a hundred options</h2>
+      <ul class="chips">
+        <li class="chip chip-lift">Weights</li>
+        <li class="chip chip-run">Treadmill</li>
+        <li class="chip chip-hyrox">Hyrox</li>
+        <li class="chip chip-swim">Swim</li>
+        <li class="chip chip-rest">Recovery</li>
+      </ul>
+    </section>
+
+    <!-- ====== CONTACTO / REDES SOCIALES ====== -->
+    <section class="contact" id="contact">
+      <h2>Follow along</h2>
+      <p class="lead">Cambia estos enlaces por tus redes reales.</p>
+      <ul class="social">
+        <li><a href="https://github.com/tu-usuario">GitHub</a></li>
+        <li><a href="https://instagram.com/tu-usuario">Instagram</a></li>
+        <li><a href="mailto:tucorreo@example.com">Email</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ====== PIE DE PÁGINA ====== -->
+  <footer class="site-footer">
+    <p>© 2026 MoodMove — built by Susie Beneto for Web Programming.</p>
+  </footer>
+
+</body>
+</html>

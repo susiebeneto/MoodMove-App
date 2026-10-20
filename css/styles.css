@@ -1,0 +1,256 @@
+/* =========================================================
+   MoodMove — About page stylesheet
+   Autora: Susie Beneto
+   =========================================================
+
+   PALETA DE COLORES  (requisito de la tarea)
+   ---------------------------------------------------------
+   --ink     #17203A   Indigo profundo   -> texto principal
+   --bg      #F2F4F7   Gris muy claro    -> fondo de la página
+   --signal  #FF3D6E   Rosa vibrante     -> acento / "swipe"
+   --go      #12B886   Verde fresco      -> acento secundario
+   --sun     #FFC53D   Ámbar cálido      -> resaltado
+   --mute    #6C7689   Gris pizarra      -> texto secundario
+   --card    #FFFFFF   Blanco            -> tarjetas
+   ========================================================= */
+
+/* Guardo la paleta como variables para reusarla fácil */
+:root {
+  --ink:    #17203A;
+  --bg:     #F2F4F7;
+  --signal: #FF3D6E;
+  --go:     #12B886;
+  --sun:    #FFC53D;
+  --mute:   #6C7689;
+  --card:   #FFFFFF;
+
+  --radius: 16px;
+  --max:    1040px;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Archivo", system-ui, Arial, sans-serif;
+  background-color: var(--bg);   /* fondo con color de la paleta */
+  color: var(--ink);             /* texto con color de la paleta */
+  line-height: 1.6;
+}
+
+h1, h2 {
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 900; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; margin-bottom: 0.8rem; }
+
+p { max-width: 62ch; }           /* renglones cómodos de leer */
+
+a { color: inherit; }
+
+/* Etiqueta pequeña arriba del título */
+.kicker {
+  color: var(--signal);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  color: var(--mute);
+  font-size: 1.15rem;
+}
+
+/* Centro el contenido con márgenes automáticos */
+.hero, .about, .modes, .contact {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+}
+
+/* ---------- Encabezado + logo ---------- */
+.site-header {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+
+/* El "cuadrito" del logo */
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background-color: var(--signal);
+  color: var(--card);
+  font-size: 1.1rem;
+}
+
+.logo-text strong { color: var(--signal); }
+
+.nav a {
+  text-decoration: none;
+  color: var(--mute);
+  font-weight: 500;
+  margin-left: 1.25rem;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.nav a:hover { color: var(--ink); }
+.nav a.is-active {
+  color: var(--ink);
+  border-color: var(--signal);   /* subraya la página actual */
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.hero-copy { flex: 1 1 340px; }
+
+/* Cartas apiladas estilo swipe (puro CSS) */
+.card-stack {
+  flex: 1 1 260px;
+  position: relative;
+  height: 300px;
+  min-width: 260px;
+}
+.swipe-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 190px;
+  height: 250px;
+  border-radius: 22px;
+  background-color: var(--card);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  box-shadow: 0 18px 40px rgba(23, 32, 58, 0.16);
+}
+/* Cada carta girada un poco para que se vean "barajadas" */
+.card-1 { transform: translate(-50%, -50%) rotate(-6deg);  border-bottom: 6px solid var(--signal); z-index: 3; }
+.card-2 { transform: translate(-40%, -52%) rotate(5deg);   border-bottom: 6px solid var(--go);     z-index: 2; }
+.card-3 { transform: translate(-60%, -48%) rotate(-14deg); border-bottom: 6px solid var(--sun);    z-index: 1; }
+
+/* ---------- Sección "Why I built this" ---------- */
+.about {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.about-text { flex: 2 1 380px; }
+.about-text p { margin-bottom: 1rem; }
+
+.portrait {
+  flex: 1 1 200px;
+  text-align: center;
+}
+/* Recuadro con iniciales (mientras no pongas foto) */
+.portrait-ph {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 0.75rem;
+  border-radius: var(--radius);
+  background-color: var(--ink);
+  color: var(--sun);
+  display: grid;
+  place-items: center;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+/* Si usas una foto real */
+.portrait img {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.portrait figcaption {
+  color: var(--mute);
+  font-weight: 600;
+}
+
+/* ---------- Variedad de rutinas (chips) ---------- */
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.chip {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  color: var(--ink);
+  background-color: var(--card);
+  border: 2px solid var(--ink);
+}
+/* Cada modo con su color de la paleta */
+.chip-lift  { border-color: var(--signal); }
+.chip-run   { border-color: var(--go); }
+.chip-hyrox { border-color: var(--sun); }
+.chip-swim  { border-color: var(--ink); }
+.chip-rest  { border-color: var(--mute); color: var(--mute); }
+
+/* ---------- Contacto / redes ---------- */
+.social {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.social a {
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  background-color: var(--ink);
+  color: var(--bg);
+  transition: background-color 0.15s;
+}
+.social a:hover { background-color: var(--signal); }
+
+/* ---------- Pie de página ---------- */
+.site-footer {
+  border-top: 1px solid #dfe3ea;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--mute);
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsive (celular) ---------- */
+@media (max-width: 640px) {
+  .site-header { flex-direction: column; gap: 0.75rem; }
+  .card-stack { margin-top: 1rem; }
+}
